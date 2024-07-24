@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+
+    body {
+        height: 100dvh;
+        width: 100dvw;
+        background-color: #131313;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        border: 2px solid white;
+        box-shadow: 0px 0px 20px red,
+                    inset 0px 0px 20px red;
+        margin: 50px auto;
+        background-color: #131310;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        padding: 50px;
+    }
+
+    h2 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-shadow: 0px 0px 5px rgb(255, 0, 0),
+                     0px 0px 5px maroon;
+        -webkit-text-stroke: 1px rgb(120, 100, 100);
+        margin-top: 10dvh;
+    }
+
+    input {
+        height: 50px;
+        width: 150px;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        font-size: 1.8em;
+    }
+
+    ::placeholder {
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    #btn {
+        height: 30px;
+        width: 200px;
+        margin-top: 30px;
+        border-radius: 20px;
+        background-color: grey;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+
+    h3 {
+        color: white;
+        font-size: 3em;
+        margin-top: 30px;
+    }
+</style>
+<body>
+    
+    <h2>Interaction of charges</h2>
+    <h3 id="output">00</h3>
+    <div class="container">
+        <div class="box">
+            <input type="number" name="" id="value" placeholder="Enter No.of Corners">
+            <button id="btn" onclick="check()">Check</button>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    function check(){
+        let NewVal = document.getElementById("value").value;
+            NewVal = parseInt(NewVal);
+
+        let ans = NewVal - 1;
+            ans = NewVal * ans;
+            ans = ans / 2;
+
+        let otpt = document.getElementById("output");
+            otpt.innerHTML = ans;
+    }
+</script>
+</html>
